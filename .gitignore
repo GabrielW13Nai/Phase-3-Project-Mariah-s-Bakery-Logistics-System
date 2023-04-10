@@ -1,0 +1,14 @@
+#Github ignored files when making commits
+
+#ignore bundle config
+/.bundle
+#ignore SQLite3 Database
+
+/db/*.sqlite3
+/db/*.sqlite3-*
+
+# Byebug
+.byebug_history
+
+# Canvas-specific .results.json
+.results.json
