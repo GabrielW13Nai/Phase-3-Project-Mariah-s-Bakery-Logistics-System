@@ -10,7 +10,7 @@ puts "🌱 Seeding data..."
 
 # Create rider details
 
-15.times do 
+7.times do 
     Rider.create(
         name: Faker::Name.name,
         id_no: Faker::IDNumber.south_african_id_number,
@@ -28,14 +28,14 @@ puts "🌱 Seeding data..."
     1.times do
         team = Team.order('RANDOM()').first
         rider = Rider.order('RANDOM()').first
-   
+   6.times do
         Order.create(
-            name_of_order: Faker::Food.dish,
-            time_of_order: Faker::Time.between(from: DateTime.now - 2, to: DateTime.now,
-            format: :short),
+            name_of_order: Faker::Dessert.variety,
+            time_of_order: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :default),
             delivery_time_in_minutes: rand(30..120),
             rider_id: rider.id,
             team_id: team.id)
+   end
 
     end
 

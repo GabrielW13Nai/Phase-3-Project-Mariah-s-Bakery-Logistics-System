@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-    belongs_to :riders
-    belongs_to :teams
+    belongs_to :rider
+    belongs_to :team
     
 end

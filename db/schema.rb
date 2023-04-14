@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2023_04_10_122731) do
 
   create_table "orders", force: :cascade do |t|
     t.string "name_of_order"
-    t.integer "time_of_order"
+    t.datetime "time_of_order"
     t.integer "delivery_time_in_minutes"
     t.integer "rider_id"
     t.integer "team_id"
