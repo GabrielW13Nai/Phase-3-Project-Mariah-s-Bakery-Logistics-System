@@ -1,7 +1,10 @@
 require 'pry'
 class ApplicationController < Sinatra::Base
     set :default_content_type, 'application/json'
-
+    get '/' do
+        rider = Rider.all
+        rider.to_json
+    end
     get '/riders' do
         rider = Rider.all
         rider.to_json
@@ -29,6 +32,10 @@ class ApplicationController < Sinatra::Base
     post '/riders' do
         rider = Rider.create(name: params[:name],id_no: params[:id_no], nationality: params[:nationality], phone_number: params[:phone_number], plate_number: params[:plate_number] )
         rider.to_json
+
+        # if Rider.find_by(id_no:params[:id_no])
+        #     halt 400, 'Id Number already exists'
+        # end
     end
     post '/orders' do
         order = Order.create(name_of_order: params[:name_of_order],time_of_order: params[:time_of_order], delivery_time_in_minutes: params[:delivery_time_in_minutes], rider_id: params[:rider_id], team_id: params[:team_id] )
