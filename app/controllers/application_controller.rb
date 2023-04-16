@@ -1,9 +1,10 @@
 require 'pry'
+#Route paths for the API
 class ApplicationController < Sinatra::Base
     set :default_content_type, 'application/json'
-    get '/' do
-        rider = Rider.all
-        rider.to_json
+    get '/ongoing' do
+        order = Order.all
+        order.to_json(only: [:id, :name_of_order, :time_of_order, :delivery_time_in_minutes], include: {rider: {only: [:id, :name, :id_no]}, team: {only: [:name]}})
     end
     get '/riders' do
         rider = Rider.all
@@ -24,6 +25,10 @@ class ApplicationController < Sinatra::Base
     get '/orders/:id' do
         order = Order.find(params[:id])
         order.to_json
+    end
+    get '/riders/:id1/:id2' do
+        riders = Rider.find(id: params[:id1]..params[:id2])
+        rider.to_json 
     end
     get '/teams/:id' do
         team = Team.find(params[:id])
@@ -59,6 +64,11 @@ class ApplicationController < Sinatra::Base
         team = Team.find(params[:id])
         team.destroy
         team.to_json
+    end
+    delete '/riders/:id1/:id2' do
+        riders = Rider.where(params[:id1]..params[:id2])
+        rider.destroy
+        rider.to_json
     end
 
 end
