@@ -2,7 +2,7 @@
 
 require_relative './config/environment'
 
-# Allow Cross-Origin Resource Sahring
+# Allow Cross-Origin Resource Sharing
 use Rack::Cors do
     allow do
         origins '*'
