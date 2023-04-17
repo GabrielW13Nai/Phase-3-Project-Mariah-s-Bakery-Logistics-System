@@ -27,7 +27,7 @@ gem "require_all"
 # Run Cross Origin Resource Sharing
 gem 'rack-cors'
 # These gems will only be used when we are running the application locally
-group :development do
+group :production do
   # Used to generate seed data
   gem "faker", "~> 2.18"
 
