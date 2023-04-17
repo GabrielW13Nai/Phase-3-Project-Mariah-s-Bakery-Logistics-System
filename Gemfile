@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby '2.7.4'
+
 # A DSL for creating web applications
 gem "sinatra", "~> 2.1"
 
