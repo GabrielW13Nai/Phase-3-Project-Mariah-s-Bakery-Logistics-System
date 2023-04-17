@@ -21,6 +21,9 @@ gem "sqlite3", "~> 1.4"
 # Require all files in a folder
 gem "require_all"
 
+gem install sqlite3 -v 1.3.11
+#install sqlite
+
 # Run Cross Origin Resource Sharing
 gem 'rack-cors'
 # These gems will only be used when we are running the application locally
