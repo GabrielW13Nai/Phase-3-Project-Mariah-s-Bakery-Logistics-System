@@ -18,6 +18,7 @@ gem "rack-contrib", "~> 2.3"
 # Provides functionality to interact with a SQLite3 database
 gem "sqlite3", "~> 1.4"
 
+
 # Require all files in a folder
 gem "require_all"
 
